@@ -1,9 +1,30 @@
 package com.teksenz.demo;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 
 public class LoginTests {
+
+    @BeforeClass
+    public void beforeClass(){
+        System.out.println("before class method executed");
+    }
+
+    @AfterClass
+    public void afterClass(){
+        System.out.println("After class method executed");
+    }
+
+    @BeforeMethod
+    public void beforeMethod(){
+        System.out.println("Before method executed...");
+    }
+
+    @AfterMethod
+    public void afterMethod(){
+        System.out.println("After method executed...");
+    }
 
     @Test(priority = 1,testName = "Login test with valid username and password")
     public void loginWithValidUser(){
@@ -32,5 +53,6 @@ public class LoginTests {
     public void logoutTest(){
         System.out.println("This is a logout test");
     }
+
 
 }
